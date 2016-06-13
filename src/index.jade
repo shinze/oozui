@@ -1,0 +1,184 @@
+doctype html
+html(lang="fr")
+  head
+    title OOZ
+    link(rel="stylesheet", href="app.raw.css")
+  body
+  .ooz
+    nav.menu
+      a(href="#").close.menu__close
+        span.readable-text Fermer
+
+      .menu__user
+        .user-icon.menu__user-icon
+          span(title="Thomas Moyse").user-icon__initials tm
+          img(src="https://pbs.twimg.com/profile_images/1137960866/tom_400x400.png", alt="Thomas").user-icon__picture
+        ul.menu__user-options
+          li.menu__user-options-username Thomas Moyse
+          li.menu__user-options-off: a(href="#") Déconnexion
+
+      .menu__brand
+        img(src="https://upload.wikimedia.org/wikipedia/fr/archive/b/bf/20160108203550!KFC_logo.svg", alt="KFC, hmmm miam miam").menu__brand-logo
+      .menu__flows
+          ul.menu__flows-list
+            li.menu__flows-item
+              a(href="#")
+                .brand-icon.menu__flows-brand-icon
+                  span(title="Leroy Merlin").brand-icon__initials lm
+                  img(src="http://www.logotypes101.com/logos/91/51FBC905D385E76E86AD431F2D892A9A/Leroy_Merlin92.png", alt="Leroy").brand-icon__picture
+                 | Leroy Merlin groupe
+            li.menu__flows-item
+              a(href="#")
+                .brand-icon.menu__flows-brand-icon
+                  span(title="Castorama").brand-icon__initials c
+                  img(src="http://www.mega-bonnes-affaires.com/wp-content/uploads/2016/05/logo-castorama.jpg", alt="LeroyCasto").brand-icon__picture
+                 | Castorama
+            li.menu__flows-item
+              a(href="#")
+                .brand-icon.menu__flows-brand-icon
+                  span(title="Brico Dépôt").brand-icon__initials bd
+                  img(src="http://s03.peimg.fr/annonceurs/images/90081BHiDlIr26_fb.gif", alt="LeroyCasto").brand-icon__picture
+                 | Brico Dépôt
+                
+        .menu__tools
+          ul.menu__tools-list
+            li.menu__tools-item
+              a(href="#") Ajouter
+            li.menu__tools-item
+              a(href="#") Lorem
+
+    main.room
+      .room__info
+        h1.title--medium.room__title
+          .brand-icon.room__icon
+            span(title="Brico Dépôt").brand-icon__initials bd
+            img(src="http://s03.peimg.fr/annonceurs/images/90081BHiDlIr26_fb.gif", alt="LeroyCasto").brand-icon__picture
+          span.room__name Brico Dépôt
+            
+
+            
+      .flow
+        .flow__scroll
+          .message
+            .user-icon.message__user-icon
+              span(title="Thomas Moyse").user-icon__initials tm
+              img(src="https://pbs.twimg.com/profile_images/1137960866/tom_400x400.png", alt="Thomas").user-icon__picture
+            .message__body
+              .message__meta
+                span.message__meta-username Thomas Moyse
+                span.message__meta-separator &nbsp;—&nbsp;
+                span.message__meta-date Hier, 17:35
+              .message__content
+                p  Lorem ipsum <a href="#" class="message__mention">@PaulDujon</a> dolor sit amet, consectetur adipisicing elit. Delectus placeat totam fugiat odit temporibus voluptas sequi accusantium at. Aperiam dolor eveniet quasi odio nostrum, beatae earum sapiente temporibus atque eum?
+          .message
+            .user-icon.message__user-icon
+              span(title="Thomas Moyse").user-icon__initials tm
+              img(src="https://pbs.twimg.com/profile_images/1137960866/tom_400x400.png", alt="Thomas").user-icon__picture
+            .message__body
+              .message__meta
+                span.message__meta-username Thomas Moyse
+                span.message__meta-separator &nbsp;—&nbsp;
+                span.message__meta-date Hier, 17:35
+              .message__content
+                p  Lorem ipsum <a href="#" class="message__mention">@PaulDujon</a> dolor sit amet, consectetur adipisicing elit. Delectus placeat totam fugiat odit temporibus voluptas sequi accusantium at. Aperiam dolor eveniet quasi odio nostrum, beatae earum sapiente temporibus atque eum?
+          .message
+            .user-icon.message__user-icon
+              span(title="Thomas Moyse").user-icon__initials tm
+              img(src="https://pbs.twimg.com/profile_images/1137960866/tom_400x400.png", alt="Thomas").user-icon__picture
+            .message__body
+              .message__meta
+                span.message__meta-username Thomas Moyse
+                span.message__meta-separator &nbsp;—&nbsp;
+                span.message__meta-date Hier, 17:35
+              .message__content
+                p  Lorem ipsum <a href="#" class="message__mention">@PaulDujon</a> dolor sit amet, consectetur adipisicing elit. Delectus placeat totam fugiat odit temporibus voluptas sequi accusantium at. Aperiam dolor eveniet quasi odio nostrum, beatae earum sapiente temporibus atque eum?
+
+          .flow__separator
+            hr.flow__separator-hr
+            .flow__separator-date Aujourd’hui
+
+          .message
+            .user-icon.message__user-icon
+              span(title="Bob Fantome").user-icon__initials bf
+              img(src="http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=23634492", alt="Thomas").user-icon__picture
+            .message__body
+              .message__meta
+                span.message__meta-username Bob
+                span.message__meta-separator &nbsp;—&nbsp;
+                span.message__meta-date Hier, 17:35
+              .message__content
+                p  Lorem ipsum <a href="#" class="message__mention">@PaulDujon</a> dolor sit amet, consectetur adipisicing elit. Delectus placeat totam fugiat odit temporibus voluptas sequi accusantium at. Aperiam dolor eveniet quasi odio nostrum, beatae earum sapiente temporibus atque eum?
+
+        .talk
+          form
+            textarea.talk__field Hello
+            input(type="submit", value="Envoyer").talk__submit
+
+      .files
+        .files__header
+          h2.title--medium.files__title Documents
+          .files__tools
+            .files__search
+              label.readable-text Recherche
+              input(type="text", placeholder="Ex. MaPhoto.jpg").form-control
+            .files__filter
+              ul.files__filter-list
+                li: a(href="#") Images
+                li: a(href="#") PDF
+                li: a(href="#") Autres
+          
+ 
+        .files__scroll
+          .files__browser.files__browser--asthumbs          
+            .file.file--asthumb
+              img(src="http://lorempixel.com/150/100/", alt="")
+              .file__info
+                //- Texte Trop long
+                .file__name ledébut…lafin.jpg 
+                .file__size 178ko
+            .file.file--asthumb
+              img(src="http://lorempixel.com/200/100/", alt="")
+              .file__info
+                .file__name loremipsum.jpg
+                .file__size 178ko
+            .file.file--asthumb
+              img(src="http://lorempixel.com/90/100/", alt="")
+              .file__info
+                .file__name loremipsum.jpg
+                .file__size 178ko
+            .file.file--asthumb
+              img(src="http://lorempixel.com/80/100/", alt="")
+              .file__info
+                .file__name loremipsum.jpg
+                .file__size 178ko
+            .file.file--asthumb
+              img(src="http://lorempixel.com/190/100/", alt="")
+              .file__info
+                .file__name loremipsum.jpg
+                .file__size 178ko
+            .file.file--asthumb
+              img(src="http://lorempixel.com/100/100/", alt="")
+              .file__info
+                .file__name loremipsum.jpg
+                .file__size 178ko
+            .file.file--asthumb
+              img(src="http://lorempixel.com/100/100/", alt="")
+              .file__info
+                .file__name loremipsum.jpg
+                .file__size 178ko
+            .file.file--asthumb
+              img(src="http://lorempixel.com/100/100/", alt="")
+              .file__info
+                .file__name loremipsum.jpg
+                .file__size 178ko
+            .file.file--asthumb
+              img(src="http://lorempixel.com/100/100/", alt="")
+              .file__info
+                .file__name loremipsum.jpg
+                .file__size 178ko
+
+            
+
+        .files__dropzone
+
+

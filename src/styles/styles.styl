@@ -1,0 +1,502 @@
+
+
+
+
+
+/**
+ * Vars and mixins
+ */
+
+
+
+/* Colors */
+bg-main =            #FAFAFA // Gris très clair pour le fond principal
+text-color-dark =    #1E3236 // Gris coloré dense
+text-color =         #486A72
+text-color-medium =  #7F969C // Gris coloré clair
+text-color-light =   #C4CCCE // Gris coloré clair
+text-color-lighter = #EDF0F1
+
+
+/* Font sizes */
+main-font-size = (14 / 16) * 1rem // 14px
+
+
+/* Components margin */
+component-margin = 20px
+
+
+/* Screen sizes */
+screen-sm = 34em // Landscape phone
+screen-md = 48em // Tablets
+screen-lg = 62em // Desktop
+screen-xl = 75em // Large Desktop
+
+
+
+/* Clearfix */
+
+clearfix()
+  &:after
+  &:before
+    content ""
+    display table
+  &:after
+    clear both
+
+list-unstyled()
+    list-style none
+    margin 0
+    padding 0
+
+btn--aslink()
+    appearance none
+    border 0
+    background-color transparent
+
+
+
+
+
+
+/**
+ * Resets and global settings
+ */
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import "../../node_modules/normalize.css/normalize.css"
+
+
+*
+    box-sizing border-box
+    &:after,
+    &:before
+        box-sizing inherit
+
+::selection
+    background text-color
+    color #fff
+a
+    text-decoration none
+
+hr
+    border 0
+    margin 0
+
+input
+    cursor pointer
+
+body
+    margin 0
+    padding 0
+    font-family Open Sans, sans-serif
+    color text-color-dark
+    background-color bg-main
+    font-size main-font-size
+
+p
+    margin-top 0
+    margin-bottom 1rem
+
+input
+textarea
+select
+    color inherit
+    font-family inherit
+    color text-color-medium
+
+/* Utilities and shared classes */
+
+.readable-text
+    clip rect(1px, 1px, 1px, 1px);
+    position absolute !important;
+    height 1px
+    width 1px
+    overflow hidden
+
+
+.close
+    display block
+    width 1rem
+    height 1rem
+    &:after
+        content '×' // &times;     
+        display inline-block
+        position absolute
+        top 0
+        left 0
+        line-height .5
+        font-size 1.5rem
+
+
+.title--medium
+    margin 0
+    font-size 1rem
+    color text-color-medium
+
+
+
+.user-icon,
+.brand-icon
+    display inline-block
+    width 32px
+    height 32px
+    border-radius 50%
+    overflow hidden
+    position relative
+    background-color text-color
+
+    &__initials,
+    &__picture
+        position absolute
+        top 0
+        left 0
+        display block
+        width 100%
+        height 100%
+
+    &__initials
+        line-height 32px
+        text-align center
+        text-transform uppercase
+        color #fff
+        font-size main-font-size
+
+    &__picture
+        max-width 100%
+
+.brand-icon
+    border-radius 3px
+    vertical-align middle
+
+/* Forms */
+.form-control
+    width 100%
+    padding .5rem
+    border-radius 0
+    appearance none
+    -webkit-appearance none
+    border 1px solid text-color-light
+
+    &:focus
+        outline 0
+        box-shadow 0 0 3px 1px hotpink
+
+select.form-control
+    position relative
+    &:after
+        content "COUCOUCOUCOU"
+        display inline-block
+        position absolute
+        top 0
+        right 0
+        border 20px red solid
+        z-index 10000000
+
+
+
+
+
+
+
+
+
+
+/* Main components */
+
+
+.room
+    &__info
+        padding-top 10px
+        padding-bottom 10px
+        padding-left 20px
+        border-bottom 1px solid text-color-light
+        height calc(60/16*1rem) // ±60px
+
+    &__title
+        margin 0
+
+    &__name
+        font-weight bold
+
+    &__icon
+        margin-right 10px
+
+
+.talk
+    position relative
+
+    &__field
+        padding 10px
+        border-radius 3px
+        border 2px solid text-color-light
+        width 100%
+        resize none
+
+    &__submit
+        position absolute
+        top 50%
+        right 10px
+        transform translateY(-50%)
+        color text-color-medium
+        appearance none
+        border 0
+        background-color transparent
+        
+
+
+
+/* The menu */
+
+.menu
+    background-color text-color-medium
+    a
+        color #fff
+
+.menu__close
+    position absolute
+    top 20px
+    right 20px
+
+
+.menu__user
+    padding 10px
+    margin-bottom component-margin
+    height calc(60/16*1rem) // ±60px
+
+    *
+        color #fff
+
+    &-icon
+        margin-right 10px
+
+    &-options
+        display inline-block
+        margin 0
+        padding 0
+        list-style none
+
+    &-options-username
+        font-weight bold
+
+
+.menu__brand
+    text-align center
+    margin-bottom component-margin
+
+    &-logo
+        max-width 120px
+
+
+.menu__flows
+    &-list
+        margin 0
+        padding 0
+        list-style none
+    &-item a
+        display inline-block
+        width 100%
+        border-bottom 1px solid text-color-light
+        padding 10px
+
+        &:hover,
+        &:focus
+            background-color text-color
+
+    &-item:first-child a
+        border-top  1px solid text-color-light
+
+
+    &-brand-icon
+        margin-right 10px
+
+
+.menu__tools
+    position absolute
+    bottom 0
+    right 0
+    left 0
+    border-top 1px solid text-color-light
+    &-list
+        margin 0
+        padding 0
+        list-style none
+
+
+
+
+
+
+/* The main flow */
+.flow
+
+    &__separator
+        position relative
+        margin-left -20px // Main flow margin overflow
+        margin-right -20px
+        margin-bottom component-margin
+
+    &__separator-hr
+        z-index 1
+        position absolute
+        top 50%
+        transform translateY(-50%)
+        width 100%
+        height 1px
+        background-color text-color-light
+
+    &__separator-date
+        display inline
+        z-index 2
+        position relative
+        padding-right 10px
+        padding-left 10px
+        margin-left 1rem
+        font-style italic
+        background-color bg-main
+        color text-color-medium
+
+.flow__scroll
+    padding 20px
+
+
+
+
+
+/* Files */
+
+.files
+
+    &__header
+        padding 20px
+        border-bottom 1px solid text-color-light
+
+    &__title
+        margin-bottom 10px
+
+    &__tools
+        background-color #eee
+    
+    &__scroll
+        padding 20px
+        height 500px
+        overflow scroll
+
+
+
+.files__browser--asthumbs
+    display flex
+    flex-direction row
+    flex-wrap wrap
+    justify-content flex-start;
+    align-content flex-start
+    align-items flex-start
+    .file--asthumb
+        box-flex auto
+        padding 5px
+        vertical-align middle
+        display block
+        img
+            max-height 100px
+
+
+/* A file block */
+.file
+    background-color #fff
+
+    img
+        display inline-block
+        width 100%
+        max-width 100%
+        height auto
+
+    &__info
+        font-size calc(12/16*1rem)
+
+    &__size
+        font-weight bold
+
+
+
+/* A message block */
+.message
+    font-size main-font-size
+    margin-bottom component-margin
+    &__user-icon
+        float left
+    &__body
+        padding-left calc(32px + 20px) // User image + 20px
+    &__content
+        color text-color
+    &__meta
+        margin-bottom calc(10/16*1rem)
+    &__meta-username
+        font-weight bold
+    &__meta-date
+        color text-color-dark
+    &__mention
+        color text-color
+        font-weight bold
+        &:hover
+            color text-color-dark
+
+
+/* Root layout */
+.ooz
+    height 100vh
+
+.menu
+    z-index 1000
+    position fixed
+    top 0
+    bottom 0
+    left 0
+    right 0
+
+
+@media (min-width: screen-md)
+    .menu
+        position relative
+    .menu__close
+        display none
+
+    .menu,
+    .room
+        float left
+
+    .menu
+        width 20%
+        height 100vh
+
+    .room
+        width 80%
+        height 100vh
+
+/* Room layout */
+
+@media (min-width: screen-md)
+
+    .flow,
+    .files
+        float left
+        height calc(100vh - 60px) // 100% of the window less the room__info height
+
+    .flow
+        position relative
+        width 60%
+
+    .flow__scroll
+        height calc(100vh - 180px)
+        overflow-x hidden
+        overflow-y scroll
+        margin-bottom 100px
+
+    .files
+        width 40%
+        border-left 1px solid text-color-light
+
+    .talk
+        position absolute
+        bottom 20px
+        right 20px
+        left 20px

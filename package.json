@@ -1,0 +1,26 @@
+{
+  "name": "oozui",
+  "version": "1.0.0",
+  "description": "Interface OOZ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "rm -rf app && mkdir app",
+    "start": "npm run build:templates & npm run transpile:stylus & npm run serve",
+    "serve": "browser-sync start --files 'app/*.*' --server 'app'",
+    "build:templates": "jade src -o app -w",
+    "transpile:stylus": "stylus -w --include-css ./src/styles/styles.styl -o ./app/app.raw.css",
+    "optimize:styles": "postcss -w -u autoprefixer -u cssnano -d './app/app.min.css' './app/app.raw.css'",
+    "com": "[--use|-u] plugin [--config|-c config.json] [--output|-o output.css] [input.css]"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "browser-sync": "^2.13.0",
+    "jade-cli": "^0.1.1",
+    "normalize.css": "^4.1.1",
+    "parallelshell": "^2.0.0",
+    "postcss": "^5.0.21",
+    "postcss-cli": "^2.5.2",
+    "pug": "^0.1.0",
+    "stylus": "^0.54.5"
+  }
+}
